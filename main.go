@@ -1,75 +1,16 @@
 package main
 
 import (
+	"ToDoProject/controller"
+	"ToDoProject/model"
 	"fmt"
-	"os"
-	"sync"
-	"time"
+	"net/http"
 )
 
-func main2() {
-	channel1 := make(chan int, 2)
-	channel2 := make(chan struct{})
+func main() {
+	fmt.Println("Listening localhost:3000")
 
-	go func() {
-		channel1 <- 1
-		channel2 <- struct{}{}
-	}()
-
-	go Select(channel1, channel2)
-	select {}
-}
-
-func Select(channel1 chan int, channel2 chan struct{}) {
-	for {
-		time.Sleep(time.Second)
-
-		select {
-		case <-channel1:
-			{
-				fmt.Println("received")
-				fmt.Println(<-channel1)
-			}
-		case <-channel2:
-			{
-				fmt.Println("exit")
-				os.Exit(0)
-			}
-		}
-	}
-
-}
-
-func makeUnbufferedChannels() {
-	channel := make(chan int)
-
-	go func() {
-		channel <- 1
-	}()
-
-	go func() {
-		fmt.Println(<-channel)
-	}()
-
-	time.Sleep(time.Second * 2)
-	fmt.Println("end")
-}
-
-func waitingGroups() {
-	wg := &sync.WaitGroup{}
-
-	wg.Add(2)
-
-	go func() {
-		fmt.Println("func 1")
-		wg.Done()
-	}()
-
-	go func() {
-		fmt.Println("func 2")
-		wg.Done()
-	}()
-
-	wg.Wait()
-	fmt.Println("End")
+	db := model.Connect()
+	defer db.Close()
+	http.ListenAndServe("localhost:3000", controller.Register())
 }

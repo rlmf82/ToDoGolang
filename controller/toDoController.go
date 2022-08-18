@@ -44,6 +44,21 @@ func Execute() http.HandlerFunc {
 			}
 
 			json.NewEncoder(writer).Encode(data)
+		} else if request.Method == http.MethodDelete {
+			fmt.Println("Delete by name")
+
+			name := request.URL.Path[1:]
+
+			error := model.Delete(name)
+
+			if buildError(writer, error) {
+				return
+			}
+
+			writer.WriteHeader(http.StatusNoContent)
+			json.NewEncoder(writer).Encode(struct {
+				Status string `json:status`
+			}{"Item deleted"})
 		}
 	}
 }

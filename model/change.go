@@ -14,3 +14,16 @@ func Create(name string, todo string) error {
 
 	return nil
 }
+
+func Delete(name string) error {
+
+	delete, err := con.Query("DELETE FROM test.TODO where name=?;", name)
+
+	defer delete.Close()
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
