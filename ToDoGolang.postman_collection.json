@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "11724815-5e2e-4708-8f02-930e4f46ef34",
+		"name": "ToDoGolang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1557330"
+	},
+	"item": [
+		{
+			"name": "1. Save New",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"rafael\",\r\n    \"todo\": \"this job\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get by Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/?name=alice",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "alice"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get by Name Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/rafael",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rafael"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
