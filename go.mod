@@ -1,4 +1,4 @@
-module awesomeProject
+module ToDoProject
 
 go 1.19
 

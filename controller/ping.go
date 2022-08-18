@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"awesomeProject/view"
+	"ToDoProject/view"
 	"encoding/json"
 	"fmt"
 	"net/http"

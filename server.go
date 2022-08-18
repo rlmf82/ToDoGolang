@@ -1,8 +1,8 @@
 package main
 
 import (
-	"awesomeProject/controller"
-	"awesomeProject/model"
+	"ToDoProject/controller"
+	"ToDoProject/model"
 	"fmt"
 	"net/http"
 )
