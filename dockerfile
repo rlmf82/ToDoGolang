@@ -4,13 +4,12 @@ FROM golang:1.16-alpine
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+ADD . /app
 
 RUN go mod download
 
-COPY *.go ./
+RUN go env -w GO111MODULE=on
 
-RUN go build -o /ToDoGolandApi
+RUN go build -o /toDoGolang
 
-CMD [ "/ToDoGolandApi" ]
+CMD [ "/toDoGolang" ]

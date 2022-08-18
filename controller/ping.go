@@ -11,6 +11,8 @@ func Ping() http.HandlerFunc {
 
 	return func(writer http.ResponseWriter, request *http.Request) {
 
+		fmt.Println("Pong")
+
 		if request.Method == http.MethodGet {
 			data := view.Response{
 				Code: http.StatusOK,
