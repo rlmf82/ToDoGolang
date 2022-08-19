@@ -1,6 +1,8 @@
 # ToDoGolang
 
-Run Docker:
+Run Docker Compose:
 
-1. Docker build . --tag=to-do-go
-2. Docker -p 3000:3000 to-do-go
+1. At the main directory run: docker-compose up
+2. Access the phpAdmin(http://localhost:5003/) with the user and password configured and run the script Database.sql to create the table on test database. 
+3. Use the postman collection to test the endpoints
+
