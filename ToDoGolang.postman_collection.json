@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"rafael\",\r\n    \"todo\": \"this job\"\r\n}",
+					"raw": "{\r\n    \"name\":\"flavia\",\r\n    \"todo\": \"this job\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -34,7 +34,7 @@
 			"response": []
 		},
 		{
-			"name": "2. Get all",
+			"name": "2. Get All",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -52,12 +52,12 @@
 			"response": []
 		},
 		{
-			"name": "2. Get by Name",
+			"name": "3. Get by Name",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/?name=alice",
+					"raw": "localhost:3000/?name=rafael",
 					"host": [
 						"localhost"
 					],
@@ -68,7 +68,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "alice"
+							"value": "rafael"
 						}
 					]
 				}
@@ -76,7 +76,7 @@
 			"response": []
 		},
 		{
-			"name": "2. Get by Name Copy",
+			"name": "4. Remove by Name",
 			"request": {
 				"method": "DELETE",
 				"header": [],

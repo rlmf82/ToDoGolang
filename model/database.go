@@ -10,7 +10,7 @@ import (
 var con *sql.DB
 
 func Connect() *sql.DB {
-	db, err := sql.Open("mysql", "rafael:password@tcp(127.0.0.1:33066)/golang-docker")
+	db, err := sql.Open("mysql", "rafael:password@tcp(database:3306)/test")
 
 	if err != nil {
 		log.Fatal(err)

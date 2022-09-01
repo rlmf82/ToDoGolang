@@ -25,7 +25,7 @@ services:
       MYSQL_DATABASE: test
     container_name: golang-docker-db
     ports:
-      - 33066:3306
+      - 3306:3306
     volumes:
       - golang-docker-data:/var/lib/mysql
 
